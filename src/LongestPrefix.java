@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class LongestPefix {
+public class LongestPrefix {
     public String longestCommonPrefix(String[] strs) {
         Arrays.sort(strs);
         String s1 = strs[0];
@@ -17,7 +17,7 @@ public class LongestPefix {
     }
 
     public static void main(String[] args) {
-        LongestPefix longestPefix = new LongestPefix();
+        LongestPrefix longestPefix = new LongestPrefix();
         String[] strs = {"flower", "flow", "flight"};
         System.out.println(longestPefix.longestCommonPrefix(strs)); // Output: "fl"
     }
