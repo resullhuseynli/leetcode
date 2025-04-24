@@ -16,6 +16,33 @@ public class LongestPrefix {
         return s1.substring(0, idx);
     }
 
+    public String longestCommonPrefix2(String[] strs) {
+
+        String result = "";
+        int wordLength = strs[0].length();
+
+        for (String s : strs) {
+            wordLength = Math.min(s.length(), wordLength);
+        }
+
+        for (int i = 0; i < wordLength; i++) {
+            for (int j = 0; j < strs.length - 1; j++) {
+                if (!strs[j].substring(0, i + 1).equals(strs[j + 1].substring(0, i + 1))) {
+                    result += strs[j].substring(0, i);
+                    return result;
+                }
+            }
+        }
+
+        for (String s : strs) {
+            if (s.length() == wordLength) {
+                result += s;
+                break;
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         LongestPrefix longestPefix = new LongestPrefix();
         String[] strs = {"flower", "flow", "flight"};
